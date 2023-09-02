@@ -41,10 +41,16 @@ ChartJS.register(
   Tooltip,
   Filler
 );
+const bottomTabConst = {
+  CHAT: "CHAT",
+  MYBET: "MYBET",
+  LEADERBOARD: "LEADERBOARD",
+};
 const App = () => {
   // let [categories] = useState(["Manual", "Auto"]);
   const [isManualTab, setisManualTab] = useState(true);
   const [isControlTab, setIsControlTab] = useState(true);
+  const [currentBottomTab, setcurrentBottomTab] = useState(bottomTabConst.CHAT);
   const options = {
     responsive: true,
     tension: 0.5,
@@ -586,27 +592,73 @@ const App = () => {
       </div>
       <div className="bottom-container">
         <div className="bottom-container-tab-container">
-          <button className="bottom-container-tab-item bottom-container-tab-item-active">
+          <button
+            className={`bottom-container-tab-item ${
+              currentBottomTab === bottomTabConst.CHAT &&
+              "bottom-container-tab-item-active"
+            }`}
+            onClick={() => setcurrentBottomTab(bottomTabConst.CHAT)}
+          >
             Chats
           </button>
-          <button className="bottom-container-tab-item">My Bets</button>
-          <button className="bottom-container-tab-item">Leaderboard</button>
+          <button
+            className={`bottom-container-tab-item ${
+              currentBottomTab === bottomTabConst.MYBET &&
+              "bottom-container-tab-item-active"
+            }`}
+            onClick={() => setcurrentBottomTab(bottomTabConst.MYBET)}
+          >
+            My Bets
+          </button>
+          <button
+            className={`bottom-container-tab-item ${
+              currentBottomTab === bottomTabConst.LEADERBOARD &&
+              "bottom-container-tab-item-active"
+            }`}
+            onClick={() => setcurrentBottomTab(bottomTabConst.LEADERBOARD)}
+          >
+            Leaderboard
+          </button>
         </div>
-        <ul className="bottom-container-list-container">
-          {Array(10)
-            .fill(1)
-            .map((e, i) => (
-              <li className="bottom-container-list-item">
-                <h2 className="bottom-container-list-item-time">01:29</h2>
-                <h2 className="bottom-container-list-item-username">
-                  Luck_2901
-                </h2>
-                <h2 className="bottom-container-list-item-msg">
-                  Lorem ipsum dolor sit amet.
-                </h2>
-              </li>
-            ))}
-        </ul>
+        {currentBottomTab === bottomTabConst.CHAT && (
+          <ul className="bottom-container-list-container">
+            {Array(10)
+              .fill(1)
+              .map((e, i) => (
+                <li className="bottom-container-list-item">
+                  <h2 className="bottom-container-list-item-time">01:29</h2>
+                  <h2 className="bottom-container-list-item-username">
+                    Luck_2901
+                  </h2>
+                  <h2 className="bottom-container-list-item-msg">
+                    Lorem ipsum dolor sit amet.
+                  </h2>
+                </li>
+              ))}
+          </ul>
+        )}
+        {currentBottomTab === bottomTabConst.MYBET && (
+          <table className="bottom-tab-table">
+            <thead className="bottom-tab-table-head">
+              <tr className="bottom-tab-table-head-row">
+                <td className="bottom-tab-table-item">GAME</td>
+                <td className="bottom-tab-table-item">TIME</td>
+                <td className="bottom-tab-table-item">BET AMOUNT</td>
+                <td className="bottom-tab-table-item">MULTIPLIER</td>
+                <td className="bottom-tab-table-item">PAYOUT</td>
+              </tr>
+            </thead>
+            <tbody className="bottom-tab-table-body">
+              <tr className="bottom-tab-table-data-row">
+                <td className="bottom-tab-table-item">Crash Game</td>
+                <td className="bottom-tab-table-item">06:47 PM</td>
+                <td className="bottom-tab-table-item">20090.87807876 TRX</td>
+                <td className="bottom-tab-table-item">2.0x</td>
+                <td className="bottom-tab-table-item">20090.87807876 TRX</td>
+              </tr>
+            </tbody>
+          </table>
+        )}
         <div className="bottom-chat-container">
           <h1 className="bottom-chat-container-text">
             You must be logged in to chat

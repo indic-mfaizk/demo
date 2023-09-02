@@ -266,6 +266,7 @@
   justify-content: flex-end;
   align-items: center;
   gap: 10px;
+  cursor: pointer;
 }
 .top-container-header-chips {
   background-color: #2f3034;
@@ -688,4 +689,17 @@
   flex-direction: column;
   gap: 5px;
   padding-bottom: 5px;
+}
+
+.bottom-tab-table {
+  table-layout: auto;
+  background-color: blue;
+  width: 100%;
+  text-align: center;
+  color: white;
+  /* border-spacing: 10px; */
+}
+.bottom-tab-table-head {
+  padding: 10px 0px;
+  background-color: green;
 }
