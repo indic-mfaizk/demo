@@ -850,8 +850,12 @@
     font-size: 12px;
   }
   .network-status {
-    bottom: 60px;
-    right: 10px;
+    position: relative;
+    top: 0px;
+    right: 0px;
+    /* background-color: blue; */
+    width: 100px;
+    height: fit-content;
   }
   .network-status-heading {
     font-size: 15px;
