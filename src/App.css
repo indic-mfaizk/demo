@@ -796,7 +796,7 @@
   }
   .bottom-container {
     height: auto;
-    width: auto;
+    width: 100%;
   }
   .top-container-header-container {
     width: 100%;
