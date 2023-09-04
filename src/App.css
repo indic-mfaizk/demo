@@ -853,9 +853,9 @@
     position: relative;
     top: 0px;
     right: 0px;
-    /* background-color: blue; */
-    width: 100px;
+    width: 145px;
     height: fit-content;
+    /* background-color: blue; */
   }
   .network-status-heading {
     font-size: 15px;
@@ -869,5 +869,9 @@
   }
   .bottom-tab-table-item {
     font-size: 12px;
+  }
+  .right-container-bottom-chips-container {
+    justify-content: center;
+    align-items: center;
   }
 }
