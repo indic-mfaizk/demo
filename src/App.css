@@ -158,6 +158,8 @@
   padding: 0px 15px;
   color: #ffffff;
   font-weight: 100;
+  background-color: inherit;
+  border: none;
 }
 .tab-screen-1-input-variant {
   flex-grow: 1;

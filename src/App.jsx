@@ -134,9 +134,9 @@ const App = () => {
                     <img src={tronImage} alt="" className="tron-input-img" />
                   </div>
                   <div className="tab-screen-1-input-button-container">
-                    <h1 className="tab-screen-1-input-button">1/2</h1>
+                    <button className="tab-screen-1-input-button">1/2</button>
                     <div className="divider"></div>
-                    <h1 className="tab-screen-1-input-button">2x</h1>
+                    <button className="tab-screen-1-input-button">2x</button>
                   </div>
                 </div>
                 {/* input-2-start */}
@@ -279,9 +279,13 @@ const App = () => {
                           />
                         </div>
                         <div className="tab-screen-1-input-button-container">
-                          <h1 className="tab-screen-1-input-button">1/2</h1>
+                          <button className="tab-screen-1-input-button">
+                            1/2
+                          </button>
                           <div className="divider"></div>
-                          <h1 className="tab-screen-1-input-button">2x</h1>
+                          <button className="tab-screen-1-input-button">
+                            2x
+                          </button>
                         </div>
                       </div>
                       {/* input-2-start */}
