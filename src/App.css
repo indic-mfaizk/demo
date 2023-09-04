@@ -808,6 +808,7 @@
   .chart-container {
     display: flex;
     width: 100%;
+    height: 300px;
   }
   .right-container-bottom-chips-container {
     width: 100%;
