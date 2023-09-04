@@ -638,26 +638,84 @@ const App = () => {
           </ul>
         )}
         {currentBottomTab === bottomTabConst.MYBET && (
-          <table className="bottom-tab-table">
-            <thead className="bottom-tab-table-head">
-              <tr className="bottom-tab-table-head-row">
-                <td className="bottom-tab-table-item">GAME</td>
-                <td className="bottom-tab-table-item">TIME</td>
-                <td className="bottom-tab-table-item">BET AMOUNT</td>
-                <td className="bottom-tab-table-item">MULTIPLIER</td>
-                <td className="bottom-tab-table-item">PAYOUT</td>
-              </tr>
-            </thead>
-            <tbody className="bottom-tab-table-body">
-              <tr className="bottom-tab-table-data-row">
-                <td className="bottom-tab-table-item">Crash Game</td>
-                <td className="bottom-tab-table-item">06:47 PM</td>
-                <td className="bottom-tab-table-item">20090.87807876 TRX</td>
-                <td className="bottom-tab-table-item">2.0x</td>
-                <td className="bottom-tab-table-item">20090.87807876 TRX</td>
-              </tr>
-            </tbody>
-          </table>
+          <div className="bottom-table-parent">
+            <table className="bottom-tab-table">
+              <thead className="bottom-tab-table-head">
+                <tr className="bottom-tab-table-head-row">
+                  <td className="bottom-tab-table-item">GAME</td>
+                  <td className="bottom-tab-table-item">TIME</td>
+                  <td className="bottom-tab-table-item">BET AMOUNT</td>
+                  <td className="bottom-tab-table-item">MULTIPLIER</td>
+                  <td className="bottom-tab-table-item">PAYOUT</td>
+                </tr>
+              </thead>
+              <tbody className="bottom-tab-table-body">
+                {Array(20)
+                  .fill(1)
+                  .map((e, i) => (
+                    <tr
+                      className={`bottom-tab-table-data-row`}
+                      style={
+                        i % 2 === 0
+                          ? { backgroundColor: "#333438" }
+                          : { backgroundColor: "#2a2b2f" }
+                      }
+                      // style={{ backgroundColor: "blue" }}
+                      key={i}
+                    >
+                      <td className="bottom-tab-table-item">Crash Game</td>
+                      <td className="bottom-tab-table-item">06:47 PM</td>
+                      <td className="bottom-tab-table-item">
+                        20090.87807876 TRX
+                      </td>
+                      <td className="bottom-tab-table-item">2.0x</td>
+                      <td className="bottom-tab-table-item">
+                        20090.87807876 TRX
+                      </td>
+                    </tr>
+                  ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+        {currentBottomTab === bottomTabConst.LEADERBOARD && (
+          <div className="bottom-table-parent">
+            <table className="bottom-tab-table">
+              <thead className="bottom-tab-table-head">
+                <tr className="bottom-tab-table-head-row">
+                  <td className="bottom-tab-table-item">RANK</td>
+                  <td className="bottom-tab-table-item">USER</td>
+                  <td className="bottom-tab-table-item">WAGERED</td>
+                  <td className="bottom-tab-table-item">PRICE</td>
+                </tr>
+              </thead>
+              <tbody className="bottom-tab-table-body">
+                {Array(20)
+                  .fill(1)
+                  .map((e, i) => (
+                    <tr
+                      className={`bottom-tab-table-data-row`}
+                      style={
+                        i % 2 === 0
+                          ? { backgroundColor: "#333438" }
+                          : { backgroundColor: "#2a2b2f" }
+                      }
+                      // style={{ backgroundColor: "blue" }}
+                      key={i}
+                    >
+                      <td className="bottom-tab-table-item">{i + 1}st</td>
+                      <td className="bottom-tab-table-item">Abhinav</td>
+                      <td className="bottom-tab-table-item">
+                        20090.87807876 TRX
+                      </td>
+                      <td className="bottom-tab-table-item">
+                        20090.87807876 TRX
+                      </td>
+                    </tr>
+                  ))}
+              </tbody>
+            </table>
+          </div>
         )}
         <div className="bottom-chat-container">
           <h1 className="bottom-chat-container-text">
