@@ -215,7 +215,8 @@
 }
 
 .tab-1-list-container {
-  height: 190px;
+  height: 175px;
+  margin-bottom: 15px;
   background: #1d1f23;
   width: 100%;
   border-radius: 10px;
@@ -263,6 +264,7 @@
   /* flex-grow: 1; */
   /* background-color: blue; */
   flex-direction: column;
+  /* padding: 10px 0px; */
 }
 
 .top-container-header-container {
@@ -274,6 +276,7 @@
   align-items: center;
   gap: 10px;
   cursor: pointer;
+  margin-top: 20px;
 }
 .top-container-header-chips {
   background-color: #2f3034;
@@ -296,7 +299,7 @@
   /* height: ; */
   /* height: 100%; */
   /* flex-grow: 1; */
-  height: 560px;
+  height: 540px;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
